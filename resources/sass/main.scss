@@ -1,0 +1,211 @@
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/scss/solid";
+@import "~@fortawesome/fontawesome-free/scss/regular";
+@import "~@fortawesome/fontawesome-free/scss/brands";
+
+$MainColor: #FF80DF;
+$SubColor: #88CC00;
+$HeaderBreakPoint: 600px;
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    margin: 0;
+    padding: 30px 0;
+    font-size: 32px;
+    line-height: 40px;
+    color: $MainColor;
+}
+
+h2 {
+    margin: 0;
+    padding: 0;
+}
+
+h3 {
+    margin: 0;
+    padding: 0;
+}
+
+h4 {
+    margin: 0;
+    padding: 0;
+}
+
+h5 {
+    margin: 0;
+    padding: 0;
+}
+
+h6 {
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: #1f6fb2;
+    text-decoration: none;
+
+    &:hover {
+        color: #1f6fb2;
+    }
+}
+
+header {
+
+    height: 60px;
+    background-color: $MainColor;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 100;
+
+    a.logo {
+        display: block;
+        width: 192px;
+        height: 48px;
+        background-size: cover;
+        background-image: url("/image/HeaderLogo.png");
+        position: absolute;
+        top: 6px;
+        left: 6px;
+
+        &:hover {
+            background-image: url("/image/HeaderLogoHover.png");
+        }
+    }
+
+    nav.left-nav {
+        @media(max-width: $HeaderBreakPoint) {
+            display: none;
+        }
+        @media(min-width: $HeaderBreakPoint) {
+            display: block;
+            ul {
+                display: flex;
+                height: 30px;
+                position: absolute;
+                top: 15px;
+                left: 220px;
+
+                li {
+                    height: 30px;
+                    padding-right: 10px;
+
+                    a {
+                        display: block;
+                        height: 30px;
+                        padding: 5px 15px;
+                        font-size: 18px;
+                        line-height: 20px;
+                        color: white;
+                        border-radius: 15px;
+
+                        &:hover {
+                            background-color: #FFCCF2;
+                            color: $MainColor;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    nav.right-nav-user {
+        @media(max-width: $HeaderBreakPoint) {
+            display: none;
+        }
+        @media(min-width: $HeaderBreakPoint) {
+            display: block;
+        }
+
+        div.user-icon {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 5px;
+            right: 10px;
+        }
+    }
+
+    div.pop-up-menu {
+        width: 300px;
+        border: 1px solid black;
+        background-color: white;
+        position: absolute;
+        top: 57px;
+        right: 7px;
+    }
+
+    nav.right-nav-guest{
+        @media(max-width: $HeaderBreakPoint){
+            display: block;
+        }
+        @media(min-width: $HeaderBreakPoint){
+            display: block;
+            ul{
+                display: flex;
+                height: 40px;
+                position: absolute;
+                top: 10px;
+                right: 10px;
+
+                li{
+                    height: 40px;
+                    padding-left: 10px;
+
+                    a{
+                        display: block;
+                        height: 40px;
+                        padding: 7px 10px;
+                        font-size: 18px;
+                        line-height: 20px;
+                        border: 3px solid white;
+                        border-radius: 5px;
+                        color: white;
+
+                        &:hover {
+                            border-color: #FFCCF2;
+                            background-color: #FFCCF2;
+                            color: $MainColor;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+main[role="main"] {
+    margin: 0;
+    padding: 60px 0 0;
+    min-height: 1000px;
+}
+
+footer {
+    background-color: gray;
+}

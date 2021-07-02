@@ -4,7 +4,11 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
+import Vue from "vue";
+import ClickOutside from "vue-click-outside";
+
 require('./bootstrap');
+require('./fontawesome');
 
 window.Vue = require('vue').default;
 
@@ -29,4 +33,26 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 
 const app = new Vue({
     el: '#app',
+    data: {
+        isClickedUserIcon: false,
+        showContent: false
+    },
+    methods: {
+        clickUserIcon: function () {
+            this.isClickedUserIcon = true;
+        },
+        clickOutsideUserIcon: function () {
+            this.isClickedUserIcon = false;
+        },
+        closePopUpMenu: function () {
+            if (this.showContent) {
+                this.showContent = false;
+            } else if (this.isClickedUserIcon) {
+                this.showContent = true;
+            }
+        }
+    },
+    directives: {
+        ClickOutside
+    }
 });
